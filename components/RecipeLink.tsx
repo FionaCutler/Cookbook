@@ -1,5 +1,6 @@
 import { Image } from 'expo-image';
-import { ImageSourcePropType, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Link } from 'expo-router';
+import { ImageSourcePropType, StyleSheet, Text, View } from 'react-native';
 
 type Props = {
   imgSource: ImageSourcePropType,
@@ -9,10 +10,10 @@ type Props = {
 export default function RecipeLink({imgSource, title}: Props) {
     return (
     <View style={styles.container}>
-        <Pressable onPress={() => alert('You pressed a button.')}>
+        <Link href="/info">
             <Image source={imgSource} style={styles.image}/>
             <Text style={styles.title}>{title}</Text>
-        </Pressable>
+        </Link>
     </View>);
 }
 
