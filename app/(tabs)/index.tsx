@@ -10,7 +10,7 @@ const DATA = [
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
     title: 'Minestrone',
     imgSource: minestroneImage,
-    description: "Recipe credit: ",
+    description: "",
     ingredients: [
       "1 8oz package of Macaroni", 
       "1 can/jar pasta sauce",
@@ -36,7 +36,23 @@ const DATA = [
   {
     id: 'bd1acbea-c1b1-46c2-aed5-3ad53abb28ba',
     title: 'Chicken and Mashed Potatoes',
-    imgSource: chickenImage,
+    imgSource: chickenImage,    
+    description: '',
+    ingredients: [
+      "1 can chicken", 
+      "1 packet chicken gravy mix",
+      "1 packet instant mashed potatoes",
+      "1 can green beans",
+    ],
+    steps: [
+      "Prepare mashed potatoes per instructions",
+      "In a small pan, mix chicken with gravy per packet",
+      "Serve chicken and gravy over potatoes with beans on the side.",
+    ],
+    tips: [
+      ""
+    ],
+    credit: "https://www.facebook.com/TheRealDollarTreeDinners"
   },
 ];
 
