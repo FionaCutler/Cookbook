@@ -1,5 +1,6 @@
+import CircleButton from "@/components/CircleButton";
 import RecipeLink from "@/components/RecipeLink";
-import { FlatList, View } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 
 
 const minestroneImage = require('@/assets/images/minestrone.jpg');
@@ -9,7 +10,7 @@ const DATA = [
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
     title: 'Minestrone',
     imgSource: minestroneImage,
-    description: "",
+    description: "Recipe credit: ",
     ingredients: [
       "1 8oz package of Macaroni", 
       "1 can/jar pasta sauce",
@@ -28,8 +29,9 @@ const DATA = [
     tips: [
       "Make it heartier by adding cooked beef, sausage, or chicken",
       "Pair with garlic bread, crusty rolls, or even a grilled cheese sandwich",
-      "Top with parmesan before serving"
-    ]
+      "Top with parmesan before serving",
+    ],
+    credit: "https://www.facebook.com/TheRealDollarTreeDinners"
   },
   {
     id: 'bd1acbea-c1b1-46c2-aed5-3ad53abb28ba',
@@ -38,19 +40,33 @@ const DATA = [
   },
 ];
 
+function createNew(){
+
+}
 export default function Index() {
   return (
     <View
-      style={{
-        flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor:"#fffec15d"
-        }}>
+      style={styles.container}>
        <FlatList
        data={DATA}
       keyExtractor={item => item.id}
        renderItem={({item})=> <RecipeLink title={item.title} imgSource={item.imgSource} />}></FlatList>
+       <View style={styles.optionsRow}>
+        <CircleButton onPress={createNew}/>
+        </View>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container:{
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor:"#fffec15d"
+  },
+  optionsRow: {
+    alignItems: 'center',
+    flexDirection: 'row',
+  }
+});
