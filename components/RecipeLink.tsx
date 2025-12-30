@@ -10,7 +10,11 @@ type Props = {
 export default function RecipeLink({imgSource, title}: Props) {
     return (
     <View style={styles.container}>
-        <Link href="/info">
+        <Link 
+        href={{
+          pathname:'/recipe/[id]', 
+          params: {id:'bacon'}
+          }} >
             <Image source={imgSource} style={styles.image}/>
             <Text style={styles.title}>{title}</Text>
         </Link>
